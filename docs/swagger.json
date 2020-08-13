@@ -1,0 +1,84 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "PamojaTech APIs",
+    "termsOfService": "",
+    "contact": {
+      "email": "mcaleb808@gmail.com"
+    },
+    "license": {
+      "name": "pamoja",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "https://pamoja-tech.herokuapp.com//",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "PamojaTech",
+      "description": "This is PamojaTech APIs documentation",
+      "externalDocs": {
+        "description": "Find out more"
+      }
+    }
+  ],
+  "schemes": ["https", "http"],
+  "paths": {
+    "api/v1/schools/reopen": {
+      "get": {
+        "tags": ["information"],
+        "summary": "Get school reopen date",
+        "description": "Returns school reopen information",
+        "operationId": "Get information by Id",
+        "produces": ["application/xml", "application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "provide id to retrieve",
+            "type": "string",
+            "required": true,
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved information",
+            "schema": {
+              "$ref": "#/definitions/information"
+            }
+          },
+          "400": {
+            "description": "Invalid data supplied"
+          },
+          "404": {
+            "description": "No data found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "information": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "status": {
+          "type": "string",
+          "example": "available"
+        },
+        "created_on": {
+          "type": "date",
+          "example": "12-08-2020"
+        }
+      },
+      "xml": {
+        "name": "information"
+      }
+    }
+  }
+}
