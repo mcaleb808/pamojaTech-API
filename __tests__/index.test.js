@@ -10,7 +10,7 @@ describe('root tests', () => {
 
   afterEach(() => app.close());
   it('test root endpoint', async () => {
-    const res = await request(app).get('/');
+    const res = await request(app).get('/api/v1');
     expect(res.body.message).toBe('Welcome to PamojaTech APIs');
   });
 });
