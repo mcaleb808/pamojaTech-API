@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "babel-node ./api",
     "dev": "nodemon --exec babel-node ./api",
     "test": "cross-env NODE_ENV=test jest   --coverage --testTimeout=10000 --detectOpenHandles --forceExit",
     "prettier": "eslint --ignore-path ./.eslintignore . --fix",
