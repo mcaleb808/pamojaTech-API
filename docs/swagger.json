@@ -12,7 +12,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "https://pamoja-tech.herokuapp.com//",
+  "host": "/pamoja-tech.herokuapp.com/",
   "basePath": "/",
   "tags": [
     {
@@ -27,53 +27,226 @@
   "paths": {
     "api/v1/schools/reopen": {
       "get": {
-        "tags": ["information"],
-        "summary": "Get school reopen date",
-        "description": "Returns school reopen information",
-        "operationId": "Get information by Id",
+        "tags": ["schools"],
+        "summary": "Get information about schools reopening",
+        "description": "Returns reopening information",
+        "operationId": "School reopening",
         "produces": ["application/xml", "application/json"],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "description": "provide id to retrieve",
-            "type": "string",
-            "required": true,
-            "example": "2"
-          }
-        ],
         "responses": {
           "200": {
-            "description": "Retrieved information",
+            "description": "School reopening",
             "schema": {
-              "$ref": "#/definitions/information"
+              "$ref": "#/definitions/info"
             }
           },
           "400": {
-            "description": "Invalid data supplied"
+            "description": "Something went wrong, Please try again!"
           },
           "404": {
-            "description": "No data found"
+            "description": "Data not found"
+          }
+        }
+      }
+    },
+    "api/v1/schools/afterReopen/basicEducation": {
+      "get": {
+        "tags": ["schools"],
+        "summary": "Get information about what will happen after reopening",
+        "description": "Returns primary and secondary schools information",
+        "operationId": "after reopening",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "After reopening",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
+    "api/v1/schools/afterReopen/highEducation": {
+      "get": {
+        "tags": ["schools"],
+        "summary": "Get information about what will happen after reopening",
+        "description": "Returns Higher Learning Institutions information",
+        "operationId": "after reopening",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "201": {
+            "description": "After reopening",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
+    "api/v1/schools/disbursements": {
+      "get": {
+        "tags": ["schools"],
+        "summary": "Get information about disbursements",
+        "description": "Returns disbursements information",
+        "operationId": "disbursements",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "disbursements",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
+    "api/v1/schools/affected/national": {
+      "get": {
+        "tags": ["schools"],
+        "summary": "Get information about affected schools",
+        "description": "Returns affected schools information",
+        "operationId": "affected schools",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "affected schools",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
+    "api/v1/schools/affected/international": {
+      "get": {
+        "tags": ["schools"],
+        "summary": "Get information about international schools",
+        "description": "Returns international schools information",
+        "operationId": "international schools",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "International schools",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
+    "api/v1/schools/fees": {
+      "get": {
+        "tags": ["schools"],
+        "summary": "Get information about school tuition fees",
+        "description": "Returns school tuition fees information",
+        "operationId": "school tuition fees",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "School tuition fees",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
+    "api/v1/schools/fees/refund": {
+      "get": {
+        "tags": ["schools"],
+        "summary": "Get information about school tuition fees refund",
+        "description": "Returns school tuition fees refund information",
+        "operationId": "school tuition fees refund",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "School tuition fees refund",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
+    "api/v1/schools/gov/recommendations": {
+      "get": {
+        "tags": ["schools"],
+        "summary": "Get information about government recommendation",
+        "description": "Returns government recommendation",
+        "operationId": "government recommendation",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "Government recommendation",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
           }
         }
       }
     }
   },
   "definitions": {
-    "information": {
+    "info": {
       "type": "object",
       "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "status": {
+        "info": {
           "type": "string",
-          "example": "available"
+          "example": "Schools will reopen in september"
         },
-        "created_on": {
-          "type": "date",
-          "example": "12-08-2020"
+        "source": {
+          "type": "string",
+          "example": {
+            "name": "Ministry of Education",
+            "link": "https://mineduc.gov.rw/index.php?id=166"
+          }
         }
       },
       "xml": {
