@@ -231,6 +231,121 @@
           }
         }
       }
+    },
+    "api/v1/tweets/en/covid": {
+      "get": {
+        "tags": ["tweets"],
+        "summary": "Get English tweets about Covid-19",
+        "description": "Returns covid tweets",
+        "operationId": "covid tweets",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "Covid tweets",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
+    "api/v1/tweets/kr/covid": {
+      "get": {
+        "tags": ["tweets"],
+        "summary": "Get Kinyarwanda tweets about Covid-19",
+        "description": "Returns covid tweets",
+        "operationId": "covid tweets",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "Covid tweets",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
+    "api/v1/tweets/en/schools": {
+      "get": {
+        "tags": ["tweets"],
+        "summary": "Get English tweets about schools",
+        "description": "Returns schools tweets",
+        "operationId": "schools tweets",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "schools tweets",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
+    "api/v1/tweets/kr/schools": {
+      "get": {
+        "tags": ["tweets"],
+        "summary": "Get Kinyarwanda tweets about schools",
+        "description": "Returns schools tweets",
+        "operationId": "schools tweets",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "schools tweets",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
+    "api/v1/tweets/fr": {
+      "get": {
+        "tags": ["tweets"],
+        "summary": "Get all tweets in French",
+        "description": "Returns French tweets",
+        "operationId": "French tweets",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "French tweets",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -251,6 +366,22 @@
       },
       "xml": {
         "name": "information"
+      }
+    },
+    "tweet": {
+      "type": "object",
+      "properties": {
+        "info": {
+          "tweet": "string",
+          "example": "Schools will reopen in september"
+        },
+        "author": {
+          "type": "string",
+          "example": "Rwanda Education Board"
+        }
+      },
+      "xml": {
+        "name": "tweet"
       }
     }
   }

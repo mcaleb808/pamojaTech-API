@@ -3,6 +3,7 @@ import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from '../docs/swagger.json';
 import officialInfoRoutes from './v1/routes/officialInfo';
+import twitterInfoRoutes from './v1/routes/tweetsInfo';
 
 config.config();
 const app = express();
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/v1/schools', officialInfoRoutes);
+app.use('/api/v1/tweets', twitterInfoRoutes);
 
 app.get('/api/v1', (_req, res) => {
   res.status(200).send({
