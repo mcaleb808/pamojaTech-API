@@ -232,6 +232,29 @@
         }
       }
     },
+    "api/v1/tweets": {
+      "get": {
+        "tags": ["tweets"],
+        "summary": "Get all tweets from Ministry of Education and REB",
+        "description": "Returns all tweets",
+        "operationId": "All tweets",
+        "produces": ["application/xml", "application/json"],
+        "responses": {
+          "200": {
+            "description": "All tweets",
+            "schema": {
+              "$ref": "#/definitions/info"
+            }
+          },
+          "400": {
+            "description": "Something went wrong, Please try again!"
+          },
+          "404": {
+            "description": "Data not found"
+          }
+        }
+      }
+    },
     "api/v1/tweets/en/covid": {
       "get": {
         "tags": ["tweets"],
@@ -241,7 +264,7 @@
         "produces": ["application/xml", "application/json"],
         "responses": {
           "200": {
-            "description": "Covid tweets",
+            "description": "English tweets",
             "schema": {
               "$ref": "#/definitions/info"
             }
