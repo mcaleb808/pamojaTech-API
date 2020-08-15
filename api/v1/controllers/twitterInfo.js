@@ -3,6 +3,11 @@ import tweets from '../data/tweets';
 import filter from '../helpers/filter';
 
 export default class TwitterInfoController {
+  static getAllTweets(_req, res) {
+    util.setSuccess(201, 'All tweets', tweets);
+    return util.send(res);
+  }
+
   static getCovidEnTweets(_req, res) {
     const info = tweets.filter(obj => obj.tweet.includes('COVID') && obj.language === 'en');
 

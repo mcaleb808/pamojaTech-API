@@ -4,6 +4,7 @@ import async from '../middleware/async';
 
 const router = Router();
 
+router.route('/').get(async(TwitterInfoController.getAllTweets));
 router.route('/en/covid').get(async(TwitterInfoController.getCovidEnTweets));
 router.route('/kr/covid').get(async(TwitterInfoController.getCovidKrTweets));
 router.route('/kr/schools').get(async(TwitterInfoController.getSchoolsKrTweets));
